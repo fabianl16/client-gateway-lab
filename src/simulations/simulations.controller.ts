@@ -17,7 +17,7 @@ export class SimulationsController implements OnModuleInit{
   @Post()
   async startSimulation(@Body() simulationDto: SimulationPayloadDto) {
   
-    this.rabbitClient.emit(envs.rabbitmqSimulationsQueue, simulationDto);
+    this.rabbitClient.emit(envs.rabbitmqGatewayQueue, simulationDto);
 
     return { message: 'Simulation request sent successfully' };
   }
