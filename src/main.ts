@@ -8,6 +8,12 @@ async function bootstrap() {
   const appPort = envs.nestJsPort;
   const app = await NestFactory.create(AppModule);
 
+  app.enableCors({
+    origin: '*',  
+    methods: 'GET,POST,PUT,PATCH,DELETE',
+    allowedHeaders: '*',
+  });
+
 
   app.setGlobalPrefix('api');
 
