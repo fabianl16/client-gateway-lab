@@ -5,4 +5,5 @@ export interface SimulationProgressPayload {
     id:       UUID;
     status:   JobStatus;
     progress: number;
+    cache_url: string;
 }
