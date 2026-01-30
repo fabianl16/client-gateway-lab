@@ -30,8 +30,8 @@ export class SimulationsGateway implements OnModuleInit{
       try {
         const raw = JSON.parse(message);
         const payload: SimulationProgressPayload = JSON.parse(raw);
-        const { id, status } = payload;
-        const room = this.roomName(id);
+        const { job_id, status } = payload;
+        const room = this.roomName(job_id);
 
         this.server.to(room).emit(envs.redisSimulationEvent, payload);
 

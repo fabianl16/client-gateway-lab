@@ -2,8 +2,8 @@ import { JobStatus } from "src/common/constants";
 import { UUID } from "src/common/types";
 
 export interface SimulationProgressPayload {
-    id:       UUID;
+    job_id:    UUID;
     status:   JobStatus;
     progress: number;
-    cache_url: string;
+    url: string;
 }
